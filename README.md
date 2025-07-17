@@ -1,10 +1,16 @@
-# DQS – DO Query String Specification
+# **DQS – DO Query String**
+
+---
 
 **DQS (DO Query String)** is a compact procedural scripting language for generating and modifying structured thought maps. It provides a minimal yet expressive format for automated map manipulation, supporting creation, editing, deletion, layout, and styling.
 
-## Syntax Overview
+---
 
-Each command begins with the `DO:` prefix and uses `/` or `//` to separate segments.
+## **Syntax Overview**
+
+---
+
+Each command begins with the `DO:` prefix and uses `/` to separate specs.
 
 ### General Structure
 
@@ -12,11 +18,13 @@ Each command begins with the `DO:` prefix and uses `/` or `//` to separate segme
 DO:<command>/<spec1>/<spec2>/...
 ```
 
-Double slashes `//` are allowed between commands when chaining.
+Double slashes `//` are allowed between create commands for connecting the elements with a visual connection.
 
 ---
 
-## Supported Commands
+## **Supported Commands**
+
+---
 
 ### `create`
 
@@ -47,24 +55,27 @@ DO:create/type:text.thought/cont:"Hello+World"/loc:x500y300/
 
 ### `edit`
 
-Edits an existing thought by its **ID**.
+Edits an existing element by its **ID**.
 
 **Important:** The ID must be a 14–19 digit number and placed directly in the path without a label.
 Example: `DO:edit/12345678912345/...`
 
 **Optional specs:**
 
-* `/cont:` – new content (`"null"` to clear)
-* `/loc:` – new location
-* `/style:` – style updates
+* `/cont:` – new content (`null` to clear)
+* `/loc:` – new location (`null` to clear)
+* `/style:` – style updates (`null` to clear)
 * `/is:` – reassigns start or end markers
-* `/extend:` – allows creation of new thought(s) directly from this one
+
+**Optional command extension:**
+
+* `/DO:extend/ID/DO:create...` - edits an existing element to connect to a new element, push ID behind the `extend` command like this: `DO:edit/DO:extend/ID/DO:create..` 
 
 ---
 
-### `delete`
+### `delete` 
 
-Deletes an existing thought by ID.
+Deletes an existing element by ID.
 
 ```
 DO:delete/12345678912345/
@@ -84,30 +95,40 @@ DO:clearAll/
 
 ### `extend`
 
-Extends from a specified thought index by creating a new thought.
+Extends from a specified thought with a visible connection by index from order of elements created in the current dq string by creating a new element.
 
 **Required:**
 
-* `/index:` – index of the source thought (0-based)
-* `/create...` – a `create` segment, following normal rules
+* `/index` – index of the element (created in range of elements in dq string)
+* `/DO:create...` – new element as child of connection, following normal `create` command rules
 
 ---
 
-## Specifications
+## **Specifications**
 
 ### `/cont:`
 
-Defines thought content. Uses encoding rules:
+Defines element content in quotes. Uses encoding rules:
 
-* `+` → space
-* `++` → line break
-* `"null"` → clears content
+* `+` - space
+* `++` - line break
+* `null` - clears content (do not wrap in quotes)
 
 **Examples:**
 
-* `cont:"Title+Here"` → `Title Here`
-* `cont:"Line+One++Line+Two"` → multiline text
-* `cont:"null"` → empty content
+* `cont:"Title+Here"` 
+
+  Title Here
+
+* `cont:"Line+One++Line+Two"` 
+
+  Line One
+
+  Line Two
+
+* `cont:null`
+
+  (no text)
 
 ---
 
@@ -124,14 +145,14 @@ Use `loc:null` to use default placement logic.
 
 ### `/style:`
 
-Applies styling to thought content or elements.
+Applies styling to element content or background.
 
 Format: `/style:<target>:<style>`
 Supported targets:
 
-* `allText` – overall style
-* `"snippet"` – styled substring (include quotes)
-* `colorTag` – for tag visuals
+* `allText` – all text in element
+* `"snippet"` – styled substring, a part of element's text (include quotes)
+* `colorTag` – background coloring
 * `background` – map-level background control
 
 #### Substyles:
@@ -164,31 +185,13 @@ Values:
 
 ---
 
-## ID Conventions
+## Defining IDs
 
-* Thought IDs must be 14 to 19 digits.
-* In `edit`, `delete`, etc., only the ID is used, without a key:
+* ID must be valid and match element on map
+* Correct usage example where `12345678912345` is the ID
 
 ```
 DO:edit/12345678912345/cont:"Updated+Text"/
 ```
 
 ---
-
-## Notes
-
-* All commands must begin with `DO:`
-* Paths are strictly ordered
-* Commands can be chained using `//`
-* Function-type thoughts require valid URLs in `/cont:`
-* Styling is extensible for future enhancements (e.g., grid backgrounds, background images)
-
----
-
-## Future Extensions (Planned)
-
-* `/style:background:image("url")`
-* `/style:background:grid(true)`
-* `/style:background:color("#000000")`
-* `/style:border:...` and `/style:font:...`
-
