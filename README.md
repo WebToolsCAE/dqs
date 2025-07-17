@@ -2,8 +2,6 @@
 
 **DQS (DO Query String)** is a compact procedural scripting language for generating and modifying structured thought maps. It provides a minimal yet expressive format for automated map manipulation, supporting creation, editing, deletion, layout, and styling.
 
----
-
 ## Syntax Overview
 
 Each command begins with the `DO:` prefix and uses `/` or `//` to separate segments.
