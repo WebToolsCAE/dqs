@@ -1,6 +1,6 @@
 # **DQS – DO Query String**
 
-**DQS (DO Query String)** is a compact procedural scripting language for generating and modifying structured thought maps. It provides a minimal yet expressive format for automated map manipulation, supporting creation, editing, deletion, layout, and styling.
+**DQS (DO Query String)** is a compact procedural scripting language for generating and modifying structured thought maps. It provides an expressive format for automated map manipulation, supporting creation, editing, deletion, layout, and styling.
 
 ## **Syntax Overview**
 
@@ -12,8 +12,10 @@ Each command begins with the `DO:` prefix and uses `/` to separate specs.
 DO:<command>/<spec1>/<spec2>/...
 ```
 
-Double slashes `//` are allowed between create commands for connecting the elements with a visual connection.
-
+Slash usage:
+`/` 1-slash: used to end a spec or to close command
+`//` 2-slash: used to make a simple connection between elements (only allowed between `DO:create` commands)
+`///` 3-slash: used to target an edit command onto a create command from dqs, use after a create and follow up with an edit (mainly used in overwriting link display text)
 
 ## **Supported Commands**
 
@@ -131,6 +133,7 @@ Supported targets:
 * `"snippet"` – styled substring, a part of element's text (include quotes)
 * `colorTag` – background coloring
 * `background` – map-level background control
+* `innerhtml` – injects html styling onto an element
 
 #### Substyles:
 
@@ -142,6 +145,10 @@ Supported targets:
 
 * `/style:background:hide` – hides background
 * `/style:background:show` – shows background
+
+### Inner html:
+
+* `/style:innerhtml:"html"` – include the html styling inside quotes
 
 ### `/is:`
 
