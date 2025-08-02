@@ -1,6 +1,6 @@
 # **DQS – DO Query String**
 
-**DQS (DO Query String)** is a compact procedural scripting language for generating and modifying structured thought maps. It provides an expressive format for automated map manipulation, supporting creation, editing, deletion, layout, and styling.
+**DQS (DO Query String)** is a compact procedural data structure for generating and modifying canvas elements. It provides an expressive format for automated map manipulation, supporting creation, editing, deletion, layout, and styling.
 
 ## **Syntax Overview**
 
@@ -13,7 +13,7 @@ DO:<command>/<spec1>/<spec2>/...
 ```
 
 Slash usage:
-`/` 1-slash: used to end a spec or to close command
+`/` 1-slash: used to start a spec or to close command
 `//` 2-slash: used to make a simple connection between elements (only allowed between `DO:create` commands)
 `///` 3-slash: used to target an edit command onto a create command from dqs, use after a create and follow up with an edit (mainly used in overwriting link display text)
 
@@ -30,13 +30,15 @@ Creates a new thought.
   * `text.thought`
   * `note.thought`
   * `function.thought`
-* `/cont:` – content of the thought
+  * `table.thought`
+    
+* `/cont:` – content of the element
 
 **Optional:**
 
 * `/loc:` – absolute position in format `x<INT>y<INT>`
 * `/style:` – one or more styling specs
-* `/is:` – marks the thought as a start or end point
+* `/is:` – assigns properties to an element
 
 **Example:**
 
@@ -48,7 +50,7 @@ DO:create/type:text.thought/cont:"Hello+World"/loc:x500y300/
 
 Edits an existing element by its **ID**.
 
-**Important:** The ID must be a 14–19 digit number and placed directly in the path without a label.
+**Important:** The ID has to originate from an existing element and must be placed with no additional text in a spec.
 Example: `DO:edit/12345678912345/...`
 
 **Optional specs:**
@@ -56,7 +58,7 @@ Example: `DO:edit/12345678912345/...`
 * `/cont:` – new content (`null` to clear)
 * `/loc:` – new location (`null` to clear)
 * `/style:` – style updates (`null` to clear)
-* `/is:` – reassigns start or end markers
+* `/is:` – reassigns properties to an element
 
 **Optional command extension:**
 
@@ -72,7 +74,7 @@ DO:delete/12345678912345/
 
 ### `clearAll`
 
-Clears all thoughts on the current map.
+Clears all elements on the current plain.
 
 ```
 DO:clearAll/
@@ -95,6 +97,9 @@ Defines element content in quotes. Uses encoding rules:
 
 * `+` - space
 * `++` - line break
+* `~` - can be used as a separator between space or line break inputs
+  for example:
+  `.../cont:"Helo+~++~+World!"/...`
 * `null` - clears content (do not wrap in quotes)
 
 **Examples:**
@@ -132,16 +137,20 @@ Supported targets:
 * `allText` – all text in element
 * `"snippet"` – styled substring, a part of element's text (include quotes)
 * `colorTag` – background coloring
-* `background` – map-level background control
+* `background` – canvas-level background control
 * `innerhtml` – injects html styling onto an element
 
 #### Substyles:
 
-* Font size: `12px` to `32px`
+* Font size: `12px` to `32px` (12,14,16,18,20,24,28,32)
 * Font style: `bold`, `italic`, `underlined`
 * Color: hex values like `#FF0000`
 
-#### Background Styles (map-level)
+Theese substyles have to be placed after the target definition and after a colon.
+For example:
+`DO:create/type:text.thought/cont:"Hello+World!"/style:colorTag:#FFFFFF/style:allText:bold/style:"World!":24px/`
+
+#### Background Styles (canvas-level)
 
 * `/style:background:hide` – hides background
 * `/style:background:show` – shows background
@@ -152,12 +161,12 @@ Supported targets:
 
 ### `/is:`
 
-Used for marking special roles on a thought.
+Used for assigning properties to an element.
 
-Values:
+Options:
 
-* `is:isStart` – marks as start point for executables
-* `is:isEnd` – marks as endpoint
+* `is:isStart` – marks the element as a starting point
+* `is:isEnd` – marks the element as an endpoint
 
 **Example:**
 
@@ -167,7 +176,7 @@ Values:
 
 ## Defining IDs
 
-* ID must be valid and match element on map
+* ID must be valid and match an element on the map
 * Correct usage example where `12345678912345` is the ID
 
 ```
