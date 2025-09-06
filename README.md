@@ -1,6 +1,6 @@
 # **DQS – DO Query String**
 
-**DQS (DO Query String)** is a compact procedural data structure for generating and modifying canvas elements. It provides an expressive format for automated map manipulation, supporting creation, editing, deletion, layout, and styling.
+**DQS (DO Query String)** is a compact procedural data structure for generating and modifying canvas elements. It provides an expressive format for automated map manipulation, supporting creation, editing, deletion, layout, and styling. It's used by [Pathmind](https://pathmind.app) to generate and import map files.
 
 ## **Syntax Overview**
 
@@ -29,7 +29,7 @@ Creates a new thought.
 
   * `text.thought`
   * `note.thought`
-  * `function.thought`
+  * `attachment.thought`
   * `table.thought`
     
 * `/cont:` – content of the element
@@ -111,7 +111,6 @@ Defines element content in quotes. Uses encoding rules:
 * `cont:"Line+One++Line+Two"` 
 
   Line One
-
   Line Two
 
 * `cont:null`
@@ -139,6 +138,7 @@ Supported targets:
 * `colorTag` – background coloring
 * `background` – canvas-level background control
 * `innerhtml` – injects html styling onto an element
+* `size` - sets the size of an image
 
 #### Substyles:
 
@@ -158,6 +158,16 @@ For example:
 ### Inner html:
 
 * `/style:innerhtml:"html"` – include the html styling inside quotes
+
+### Size:
+
+* `/size:<WIDTH>x<HEIGHT>` - scale the included image to a desired size
+
+Only allowed for create attachment thought commands, for example:
+
+```
+DO:create/type:attachment.thought/cont:"[base64]"/size:500x500/
+```
 
 ### `/is:`
 
