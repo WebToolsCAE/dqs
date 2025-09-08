@@ -84,10 +84,25 @@ DO:clearAll/
 
 Extends from a specified thought with a visible connection by index from order of elements created in the current dq string by creating a new element.
 
-**Required:**
+**Ways to use:**
 
-* `/index` – index of the element (created in range of elements in dq string)
+**index-create**
+* `/<index>` – index of the element (created in range of elements in dq string)
 * `/DO:create...` – new element as child of connection, following normal `create` command rules
+
+Example:
+```
+DO:extend/1/DO:create....
+```
+**index-index**
+
+Connect an indexed create with an indexed create, most efficient connection tactic usually referenced at the bottom of the file.
+
+Example:
+```
+DO:extend/1/2/
+```
+*Connects index 1 with index 2*
 
 ## **Specifications**
 
@@ -101,6 +116,7 @@ Defines element content in quotes. Uses encoding rules:
   for example:
   `.../cont:"Helo+~++~+World!"/...`
 * `null` - clears content (do not wrap in quotes)
+* `image data` - this only applies for attachment thoughts, to embed images you just put in base64 data (with correct data:image/png;base64 syntax) inside quotes or you result to just embeding the link to an image Pathmind's proxy will fetch it and provide it on the map.
 
 **Examples:**
 
