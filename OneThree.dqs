@@ -1,0 +1,1 @@
+DO:create/type:text.thought/cont:"Parent"/loc:x300y100/DO:create/type:text.thought/cont:"Child+1"/loc:x200y180/DO:create/type:text.thought/cont:"Child+2"/loc:x300y180/DO:create/type:text.thought/cont:"Child+3"/loc:x400y180/DO:extend/1/2/DO:extend/1/3/DO:extend/1/4/
