@@ -1,0 +1,65 @@
+DO:create/type:text.thought/cont:"Center"/loc:x500y500/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#FF0000;font-weight:bold;\">Center</span>"/
+DO:create/type:text.thought/cont:"Node+1"/loc:x500y250/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#FF4500;\">Node 1</span>"/
+DO:create/type:text.thought/cont:"Node+2"/loc:x700y300/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#FF6347;\">Node 2</span>"/
+DO:create/type:text.thought/cont:"Node+3"/loc:x800y500/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#FF8C00;\">Node 3</span>"/
+DO:create/type:text.thought/cont:"Node+4"/loc:x700y700/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#FFA500;\">Node 4</span>"/
+DO:create/type:text.thought/cont:"Node+5"/loc:x500y750/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#FFD700;\">Node 5</span>"/
+DO:create/type:text.thought/cont:"Node+6"/loc:x300y700/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#ADFF2F;\">Node 6</span>"/
+DO:create/type:text.thought/cont:"Node+7"/loc:x200y500/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#7FFF00;\">Node 7</span>"/
+DO:create/type:text.thought/cont:"Node+8"/loc:x300y300/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#32CD32;\">Node 8</span>"/
+DO:create/type:text.thought/cont:"1A"/loc:x500y150/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#FFA500;\">1A</span>"/
+DO:create/type:text.thought/cont:"1B"/loc:x450y200/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#FFA500;\">1B</span>"/
+DO:create/type:text.thought/cont:"1C"/loc:x550y200/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#FFA500;\">1C</span>"/
+DO:create/type:text.thought/cont:"2A"/loc:x800y200/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#FFD700;\">2A</span>"/
+DO:create/type:text.thought/cont:"2B"/loc:x876y194/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#FFD700;\">2B</span>"/
+DO:create/type:text.thought/cont:"2C"/loc:x840y256/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#FFD700;\">2C</span>"/
+DO:create/type:text.thought/cont:"3A"/loc:x900y450/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#FFFF00;\">3A</span>"/
+DO:create/type:text.thought/cont:"3B"/loc:x904y544/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#FFFF00;\">3B</span>"/
+DO:create/type:text.thought/cont:"3C"/loc:x950y500/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#FFFF00;\">3C</span>"/
+DO:create/type:text.thought/cont:"4A"/loc:x800y800/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#ADFF2F;\">4A</span>"/
+DO:create/type:text.thought/cont:"4B"/loc:x750y750/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#ADFF2F;\">4B</span>"/
+DO:create/type:text.thought/cont:"4C"/loc:x850y750/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#ADFF2F;\">4C</span>"/
+DO:create/type:text.thought/cont:"5A"/loc:x500y850/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#7FFF00;\">5A</span>"/
+DO:create/type:text.thought/cont:"5B"/loc:x450y800/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#7FFF00;\">5B</span>"/
+DO:create/type:text.thought/cont:"5C"/loc:x550y800/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#7FFF00;\">5C</span>"/
+DO:create/type:text.thought/cont:"6A"/loc:x200y800/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#32CD32;\">6A</span>"/
+DO:create/type:text.thought/cont:"6B"/loc:x250y750/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#32CD32;\">6B</span>"/
+DO:create/type:text.thought/cont:"6C"/loc:x150y750/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#32CD32;\">6C</span>"/
+DO:create/type:text.thought/cont:"7A"/loc:x132y538/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#3CB371;\">7A</span>"/
+DO:create/type:text.thought/cont:"7B"/loc:x120y472/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#3CB371;\">7B</span>"/
+DO:create/type:text.thought/cont:"7C"/loc:x50y500/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#3CB371;\">7C</span>"/
+DO:create/type:text.thought/cont:"8A"/loc:x200y200/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#20B2AA;\">8A</span>"/
+DO:create/type:text.thought/cont:"8B"/loc:x278y194/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#20B2AA;\">8B</span>"/
+DO:create/type:text.thought/cont:"8C"/loc:x150y250/style:colorTag:#2C2C2C/style:innerhtml:"<span style=\"color:#20B2AA;\">8C</span>"/
+DO:extend/1/2/
+DO:extend/1/3/
+DO:extend/1/4/
+DO:extend/1/5/
+DO:extend/1/6/
+DO:extend/1/7/
+DO:extend/1/8/
+DO:extend/1/9/
+DO:extend/2/10/
+DO:extend/2/11/
+DO:extend/2/12/
+DO:extend/3/13/
+DO:extend/3/14/
+DO:extend/3/15/
+DO:extend/4/16/
+DO:extend/4/17/
+DO:extend/4/18/
+DO:extend/5/19/
+DO:extend/5/20/
+DO:extend/5/21/
+DO:extend/6/22/
+DO:extend/6/23/
+DO:extend/6/24/
+DO:extend/7/25/
+DO:extend/7/26/
+DO:extend/7/27/
+DO:extend/8/28/
+DO:extend/8/29/
+DO:extend/8/30/
+DO:extend/9/31/
+DO:extend/9/32/
+DO:extend/9/33/
